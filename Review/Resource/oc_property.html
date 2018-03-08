@@ -42,8 +42,10 @@
 		
 		<br/>
 		
-		<h1>如何对iOS设备进行性能测试?</h1>
-		<h2>答：Profile-> Instruments ->Time Profiler</h2>
+		<h1>原子(atomic)跟非原子(non-atomic)属性有什么区别?</h1>
+		<h2>1). atomic提供多线程安全。是防止在写未完成的时候被另外一个线程读取，造成数据错误
+			
+			2). non-atomic:在自己管理内存的环境中，解析的访问器保留并自动释放返回的值，如果指定了 nonatomic ，那么访问器只是简单地返回这个值。</h2>
 		
 		<br/>
 		

@@ -28,6 +28,7 @@ class HMContentVC: UIViewController {
 			make.edges.equalTo(self.view)
 		}
 		
+		// 传入资源名
 		if let resourceName = resourceName {
 			let path = Bundle.main.path(forResource: resourceName, ofType: "html")
 			
