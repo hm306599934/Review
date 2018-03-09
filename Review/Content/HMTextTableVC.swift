@@ -44,6 +44,7 @@ class HMTextTableVC: UIViewController {
 			let key = dataSource[indexPath.section].1[indexPath.row]
 			let vc = segue.destination as! HMContentVC
 			
+			vc.title = key
 			vc.resourceName = resourceDic[key]
 		}
 		
