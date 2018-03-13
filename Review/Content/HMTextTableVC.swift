@@ -8,6 +8,16 @@
 
 import UIKit
 
+struct SectionData {
+	var title: String = ""
+	var data: [ItemData] = [ItemData]()
+}
+
+struct ItemData {
+	var title: String = ""
+	var content: String = ""
+}
+
 class HMTextTableVC: UIViewController {
 	
 	@IBOutlet weak var mTableView: UITableView!
@@ -18,37 +28,79 @@ class HMTextTableVC: UIViewController {
 		mTableView.reloadData()
 	}
 	
+	var middleData: [(String, [(String, String)])] {
+		
+		let basic = ("Swift", [("Swift", ""), ("各版本特性", ""), ("混编", "")])
+		let pattern = ("设计模式", [("设计思想", ""), ("系统设计模式", ""), ("单例模式", ""), ("响应链", ""), ("代理模式", "")])
+		let net = ("网络", [("http", ""), ("https", ""), ("socket", ""), ("抓包", ""), ("AFNetWorking", "")])
+		let framework = ("第三方库", [("下拉刷新", ""), ("SDWebImage", ""), ("AFNetWorking", ""), ("RxSwift原理", ""), ("Weex原理", "")])
+		
+		return [basic, pattern, net, framework]
+	}
 	
-	lazy var dataSource: [(String, [String])] = {
-		var result = [(String, [String])]()
-
-		result.append(("OC基础", ["OC基础", "OC属性", "OC Runtime"]))
-		result.append(("Swift基础", ["Swift基础", "Swift与OC区别", "Swift内存管理"]))
+	var highData: [(String, [(String, String)])] {
+		
+		let basic = ("架构", [("架构设计", ""), ("路由方案", ""), ("MGJ路由", ""), ("MVVM", ""), ("RxSwift", "")])
+		let newTech = ("新技术", [("Weex", ""), ("微信小程序", ""), ("自动化测试", ""), ("Python", ""), ("人脸识别", ""), ("AI", "")])
+		let efficiency = ("性能优化", [("性能优化方向", ""), ("内存检测", ""), ("UITableView", ""), ("电量", ""), ("检测工具", "")])
+		let demo = ("应用", [("Runtime空白页", ""), ("Runtime检测UI卡顿", ""), ("自定义KVO", ""), ("自定义消息中心", ""), ("AOP", ""), ("埋点", "")])
+		let other = ("其他", [("自我介绍", ""), ("开发经验", ""), ("发展规划", ""), ("遇到的问题", ""), ("总结", "")])
+		
+		return [basic, newTech, efficiency, demo, other]
+	}
+	
+	
+	lazy var sectionData:[SectionData] = {
+		
+		var result = [SectionData]()
+		
+		let lowDataPath = Bundle.main.path(forResource: "LowData", ofType: "plist") ?? ""
+		
+		if let array = NSArray(contentsOfFile: lowDataPath) {
+			
+			for sectionData in array {
+				
+				if let sectionData = sectionData as? Dictionary<String, Any> {
+					var newSectionData = SectionData()
+					newSectionData.title = sectionData["SectionTitle"] as! String
+					
+					if let data = sectionData["SectionData"] as? Array<Dictionary<String, String>> {
+						
+						var itemDatas = [ItemData]()
+						
+						for itemData in data {
+							
+							var newItemData = ItemData()
+							newItemData.title = itemData["title"] ?? ""
+							newItemData.content = itemData["content"] ?? ""
+							itemDatas.append(newItemData)
+						}
+						
+						newSectionData.data = itemDatas
+					}
+					
+					result.append(newSectionData)
+				}
+			}
+		}
 		
 		return result
 	}()
 	
-	lazy var resourceDic: [String: String] = {
-		var result = [String: String]()
-		result["OC基础"] = "oc_basic"
-		result["OC属性"] = "oc_property"
-		result["OC Runtime"] = "oc_runtime"
-		
-		return result
-	}()
+	var vcTitle: String {
+		return self.navigationItem.title ?? ""
+	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		
 		if let indexPath = sender as? IndexPath {
 			
-			let key = dataSource[indexPath.section].1[indexPath.row]
+			let itemDate = sectionData[indexPath.section].data[indexPath.row]
 			let vc = segue.destination as! HMContentVC
 			
-			vc.title = key
-			vc.resourceName = resourceDic[key]
+			vc.title = itemDate.title
+			vc.resourceName = itemDate.content
 		}
-		
-		
 	}
 }
 
@@ -59,26 +111,26 @@ extension HMTextTableVC: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		return (section == dataSource.count - 1) ? 40 : 0
+		return (section == sectionData.count - 1) ? 40 : 0
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return dataSource.count
+		return sectionData.count
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return dataSource[section].1.count
+		return sectionData[section].data.count
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return dataSource[section].0
+		return sectionData[section].title
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-		cell.textLabel?.text = dataSource[indexPath.section].1[indexPath.row]
+		cell.textLabel?.text = sectionData[indexPath.section].data[indexPath.row].title
 		
 		return cell
 	}

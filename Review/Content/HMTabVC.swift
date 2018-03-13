@@ -6,4 +6,22 @@
 //  Copyright © 2018 Jimmy. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+class HMTabVC: UITabBarController {
+	
+	
+	override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+		
+		
+		
+	}
+	
+}
+
+extension HMTabVC: UITabBarControllerDelegate {
+	
+	
+	
+}
