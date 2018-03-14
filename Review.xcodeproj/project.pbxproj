@@ -18,6 +18,8 @@
 		BF40AFE72050BE38002A4EC5 /* HMTextTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40AFE62050BE38002A4EC5 /* HMTextTableVC.swift */; };
 		BF40AFEA2050F355002A4EC5 /* HMContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40AFE92050F355002A4EC5 /* HMContentVC.swift */; };
 		BFBE09832056034E0003F62B /* HMTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE09822056034E0003F62B /* HMTabVC.swift */; };
+		BFBE098920578A450003F62B /* MiddleData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFBE098820578A440003F62B /* MiddleData.plist */; };
+		BFBE098B20578A690003F62B /* HighData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFBE098A20578A690003F62B /* HighData.plist */; };
 		BFCA7F0D20515B2D00BE6B25 /* low_basic_basic.html in Resources */ = {isa = PBXBuildFile; fileRef = BFCA7F0A20515B2D00BE6B25 /* low_basic_basic.html */; };
 		BFCA7F0E20515B2D00BE6B25 /* low_basic_property.html in Resources */ = {isa = PBXBuildFile; fileRef = BFCA7F0B20515B2D00BE6B25 /* low_basic_property.html */; };
 		BFCA7F0F20515B2D00BE6B25 /* low_runtime_isa.html in Resources */ = {isa = PBXBuildFile; fileRef = BFCA7F0C20515B2D00BE6B25 /* low_runtime_isa.html */; };
@@ -51,6 +53,8 @@
 		BF40AFE62050BE38002A4EC5 /* HMTextTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMTextTableVC.swift; sourceTree = "<group>"; };
 		BF40AFE92050F355002A4EC5 /* HMContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMContentVC.swift; sourceTree = "<group>"; };
 		BFBE09822056034E0003F62B /* HMTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMTabVC.swift; sourceTree = "<group>"; };
+		BFBE098820578A440003F62B /* MiddleData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MiddleData.plist; sourceTree = "<group>"; };
+		BFBE098A20578A690003F62B /* HighData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HighData.plist; sourceTree = "<group>"; };
 		BFCA7F0A20515B2D00BE6B25 /* low_basic_basic.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = low_basic_basic.html; sourceTree = "<group>"; };
 		BFCA7F0B20515B2D00BE6B25 /* low_basic_property.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = low_basic_property.html; sourceTree = "<group>"; };
 		BFCA7F0C20515B2D00BE6B25 /* low_runtime_isa.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = low_runtime_isa.html; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				BF40AFC9204E1AA5002A4EC5 /* LaunchScreen.storyboard */,
 				BF40AFCC204E1AA5002A4EC5 /* Info.plist */,
 				BF40AFE42050BCA1002A4EC5 /* LowData.plist */,
+				BFBE098820578A440003F62B /* MiddleData.plist */,
+				BFBE098A20578A690003F62B /* HighData.plist */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -246,7 +252,9 @@
 				BF40AFCB204E1AA5002A4EC5 /* LaunchScreen.storyboard in Resources */,
 				BFCA7F0E20515B2D00BE6B25 /* low_basic_property.html in Resources */,
 				BF40AFC8204E1AA5002A4EC5 /* Assets.xcassets in Resources */,
+				BFBE098920578A450003F62B /* MiddleData.plist in Resources */,
 				BF40AFE52050BCA1002A4EC5 /* LowData.plist in Resources */,
+				BFBE098B20578A690003F62B /* HighData.plist in Resources */,
 				BFCA7F0F20515B2D00BE6B25 /* low_runtime_isa.html in Resources */,
 				BF40AFC6204E1AA5002A4EC5 /* Main.storyboard in Resources */,
 				BFCA7F0D20515B2D00BE6B25 /* low_basic_basic.html in Resources */,
