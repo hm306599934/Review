@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42A644D270567086AE0DC5AF /* Pods_Review.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 755BB17E35D195703D9D3E52 /* Pods_Review.framework */; };
+		BF33F2EF2064945800EE63A6 /* Low_RunLoop_Basic.html in Resources */ = {isa = PBXBuildFile; fileRef = BF33F2EE2064945800EE63A6 /* Low_RunLoop_Basic.html */; };
 		BF40AFC1204E1AA5002A4EC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40AFC0204E1AA5002A4EC5 /* AppDelegate.swift */; };
 		BF40AFC3204E1AA5002A4EC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40AFC2204E1AA5002A4EC5 /* ViewController.swift */; };
 		BF40AFC6204E1AA5002A4EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF40AFC4204E1AA5002A4EC5 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		0E75020FD2B48337D6E73448 /* Pods-Review.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Review.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Review/Pods-Review.debug.xcconfig"; sourceTree = "<group>"; };
 		634E9AC7539FC4510143F41C /* Pods-Review.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Review.release.xcconfig"; path = "Pods/Target Support Files/Pods-Review/Pods-Review.release.xcconfig"; sourceTree = "<group>"; };
 		755BB17E35D195703D9D3E52 /* Pods_Review.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Review.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF33F2EE2064945800EE63A6 /* Low_RunLoop_Basic.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Low_RunLoop_Basic.html; sourceTree = "<group>"; };
 		BF40AFBD204E1AA5002A4EC5 /* Review.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Review.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF40AFC0204E1AA5002A4EC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF40AFC2204E1AA5002A4EC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,9 +129,6 @@
 				BF40AFC7204E1AA5002A4EC5 /* Assets.xcassets */,
 				BF40AFC9204E1AA5002A4EC5 /* LaunchScreen.storyboard */,
 				BF40AFCC204E1AA5002A4EC5 /* Info.plist */,
-				BF40AFE42050BCA1002A4EC5 /* LowData.plist */,
-				BFBE098820578A440003F62B /* MiddleData.plist */,
-				BFBE098A20578A690003F62B /* HighData.plist */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -156,6 +155,10 @@
 		BFCA7F0920515B2D00BE6B25 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BF40AFE42050BCA1002A4EC5 /* LowData.plist */,
+				BFBE098820578A440003F62B /* MiddleData.plist */,
+				BFBE098A20578A690003F62B /* HighData.plist */,
+				BF33F2EE2064945800EE63A6 /* Low_RunLoop_Basic.html */,
 				BFCA7F0A20515B2D00BE6B25 /* low_basic_basic.html */,
 				BFCA7F0B20515B2D00BE6B25 /* low_basic_property.html */,
 				BFCA7F0C20515B2D00BE6B25 /* low_runtime_isa.html */,
@@ -253,6 +256,7 @@
 				BFCA7F0E20515B2D00BE6B25 /* low_basic_property.html in Resources */,
 				BF40AFC8204E1AA5002A4EC5 /* Assets.xcassets in Resources */,
 				BFBE098920578A450003F62B /* MiddleData.plist in Resources */,
+				BF33F2EF2064945800EE63A6 /* Low_RunLoop_Basic.html in Resources */,
 				BF40AFE52050BCA1002A4EC5 /* LowData.plist in Resources */,
 				BFBE098B20578A690003F62B /* HighData.plist in Resources */,
 				BFCA7F0F20515B2D00BE6B25 /* low_runtime_isa.html in Resources */,
@@ -486,7 +490,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E75020FD2B48337D6E73448 /* Pods-Review.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJ7PPF7RZJ;
 				INFOPLIST_FILE = Review/Info.plist;
@@ -494,6 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.airactart.Review;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -503,7 +511,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 634E9AC7539FC4510143F41C /* Pods-Review.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJ7PPF7RZJ;
 				INFOPLIST_FILE = Review/Info.plist;
@@ -511,6 +522,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.airactart.Review;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

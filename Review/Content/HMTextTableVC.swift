@@ -25,6 +25,7 @@ class HMTextTableVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		
 		mTableView.reloadData()
 	}
 	
